@@ -1,0 +1,1 @@
+(()=>{"use strict";var e;e={beforeReport:[function(e){var t=e.errorDesc,b=void 0===t?"":t;return!b||!(/\bnetwork\b\s+\berror\b/i.test(b)||/\btimeout\b/i.test(b)||/\bjsonp\b\s+\brequest\b/i.test(b)||/\brequest\b\s+\baborted\b/i.test(b)||/\brequest\b\s+\bfailed\b/i.test(b)||/[\uac00-\ud7ff]/g.test(b))}]},window.webInspectorGlobalConfig=e})();
