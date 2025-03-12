@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/258cb932bc.js" crossorigin="anonymous"></script>
+  </head>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Arial", sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header span {
+      margin: 0 15px;
+    }
+
+    header div {
+      display: flex;
+      align-items: center;
+    }
+
+    header div span {
+      margin-left: 15px;
+      cursor: pointer;
+    }
+
+    .main_nav {
+      position: relative;
+      background-color: #fff;
+      padding: 30px 0;
+    }
+
+    .header_background_img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+    }
+
+    nav span {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    nav div {
+      display: flex;
+      align-items: center;
+    }
+
+    nav div span {
+      margin: 0 15px;
+      cursor: pointer;
+    }
+
+    .icons i {
+      margin-left: 15px;
+      font-size: 1.5rem;
+    }
+
+    .main_info {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .main_info p {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .main_info span {
+      font-size: 1.2rem;
+      color: #999;
+    }
+
+    .main_info button {
+      margin-top: 20px;
+      padding: 15px 30px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background-color 0.3s;
+    }
+
+    .main_info button:hover {
+      background-color: #555;
+    }
+
+    section {
+      display: flex;
+      justify-content: space-around;
+      padding: 40px 0;
+    }
+
+    section div {
+      text-align: center;
+      position: relative;
+    }
+
+    section div img {
+      width: 100%;
+      height: auto;
+    }
+
+    .sec_main {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #333;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .sec_sub {
+      font-size: 1.2rem;
+      color: #fff;
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .mid_menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      background-color: #f5f5f5;
+    }
+
+    .mid_menu h3 {
+      font-size: 2rem;
+      color: #333;
+    }
+
+    .mid_category span {
+      margin: 0 15px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .search_menu span {
+      margin: 0 15px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .items {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      padding: 50px 30px;
+    }
+
+    .item {
+      background-color: #fff;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .item img {
+      width: 100%;
+      height: auto;
+    }
+
+    .item_name {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #333;
+      margin-top: 10px;
+    }
+
+    .item .fa-heart {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 1.5rem;
+      color: #ff4081;
+      cursor: pointer;
+    }
+
+    .price {
+      font-size: 1.4rem;
+      color: #333;
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 15px 30px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 50px 30px;
+    }
+
+    .footer_menus {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .footer_menu {
+      width: 23%;
+    }
+
+    .footer_menu p {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .footer_menu ul {
+      list-style-type: none;
+    }
+
+    .footer_menu ul li {
+      margin: 5px 0;
+      cursor: pointer;
+    }
+
+    .footer_menu span {
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    .footer_menu .touch_icons i {
+      font-size: 1.5rem;
+      margin-right: 15px;
+      color: #fff;
+    }
+
+    .footer_down {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+      border-top: 1px solid #444;
+      padding-top: 20px;
+    }
+
+    .footer_down .down_imgs img {
+      width: 100px;
+      margin: 0 10px;
+    }
+
+    footer span {
+      font-size: 1rem;
+      color: #ccc;
+      text-align: center;
+      margin-top: 20px;
+      display: block;
+    }
+  </style>
+  <body>
+    <header>
+      <span>Free shipping for standard order over $100</span>
+      <div>
+        <span>Help & FAQs</span>
+        <span>My Account</span>
+        <span>EN</span>
+        <span>USD</span>
+      </div>
+    </header>
+    <div class="main_nav">
+      <img class="header_background_img" src="./img/0310/background.jpg" />
+      <nav>
+        <span>COZA STORE</span>
+        <div>
+          <span>Home</span>
+          <span>Shop</span>
+          <span>Features</span>
+          <span>Blog</span>
+          <span>About</span>
+          <span>Contact</span>
+        </div>
+        <div class="icons">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-cart-shopping"></i>
+          <i class="fa-regular fa-heart"></i>
+        </div>
+      </nav>
+      <div class="main_info">
+        <p>Women Colection 2018</p>
+        <span>New Season</span>
+        <br />
+        <button>SHOP NOW</button>
+      </div>
+    </div>
+    <section>
+      <div>
+        <img src="./img/section1.jpg" />
+        <p class="sec_main">Women</p>
+        <p class="sec_sub">spring 2018</p>
+      </div>
+      <div>
+        <img src="./img/section2.jpg" />
+        <p class="sec_main">Men</p>
+        <p class="sec_sub">spring 2018</p>
+      </div>
+      <div>
+        <img src="./img/section3.jpg" />
+        <p class="sec_main">Accessories</p>
+        <p class="sec_sub">new Trend</p>
+      </div>
+    </section>
+    <div class="mid_menu">
+      <h3>PRODUCT OVERVIEW</h3>
+      <div class="mid_category">
+        <span>All Product</span><span>Women</span><span>Bag</span
+        ><span>Shoes</span>
+        <span>Watches</span>
+      </div>
+      <div class="search_menu">
+        <span><i class="fa-solid fa-filter"></i> Filter</span>
+        <span><i class="fa-solid fa-magnifying-glass"></i> Search</span>
+      </div>
+    </div>
+    <div class="items">
+      <div class="item">
+        <img src="./img/item1.jpg" />
+        <div>
+          <span class="item_name">Esprit Ruffle Shirt</span>
+          <i class="fa-regular fa-heart"></i>
+        </div>
+        <p class="price">$16.64</p>
+      </div>
+      <div class="item">
+        <img src="./img/item2.jpg" />
+        <div>
+          <span class="item_name">Herschel supply</span>
+          <i class="fa-regular fa-heart"></i>
+        </div>
+        <p class="price">$35.64</p>
+      </div>
+      <div class="item">
+        <img src="./img/item3.jpg" />
+        <div>
+          <span class="item_name">Only Check Trouser</span>
+          <i class="fa-regular fa-heart"></i>
+        </div>
+        <p class="price">$25.64</p>
+      </div>
+      <div class="item">
+        <img src="./img/item4.jpg" />
+        <div>
+          <span class="item_name">Classic Trench Coat</span>
+          <i class="fa-regular fa-heart"></i>
+        </div>
+        <p class="price">$75.64</p>
+      </div>
+      <div class="item">
+        <img src="./img/item1.jpg" />
+        <div>
+          <span class="item_name">Esprit Ruffle Shirt</span>
+          <i class="fa-regular fa-heart"></i>
+        </div>
+        <p class="price">$16.64</p>
+      </div>
+      <div class="item">
+        <img src="./img/item2.jpg" />
+        <div>
+          <span class="item_name">Herschel supply</span>
+          <i class="fa-regular fa-heart"></i>
+        </div>
+        <p class="price">$35.64</p>
+      </div>
+      <div class="item">
+        <img src="./img/item3.jpg" />
+        <div>
+          <span class="item_name">Only Check Trouser</span>
+          <i class="fa-regular fa-heart"></i>
+        </div>
+        <p class="price">$25.64</p>
+      </div>
+      <div class="item">
+        <img src="./img/item4.jpg" />
+        <div>
+          <span class="item_name">Classic Trench Coat</span>
+          <i class="fa-regular fa-heart"></i>
+        </div>
+        <p class="price">$75.64</p>
+      </div>
+      <div class="item">
+        <img src="./img/item1.jpg" />
+        <div>
+          <span class="item_name">Esprit Ruffle Shirt</span>
+          <i class="fa-regular fa-heart"></i>
+        </div>
+        <p class="price">$16.64</p>
+      </div>
+      <div class="item">
+        <img src="./img/item2.jpg" />
+        <div>
+          <span class="item_name">Herschel supply</span>
+          <i class="fa-regular fa-heart"></i>
+        </div>
+        <p class="price">$35.64</p>
+      </div>
+      <div class="item">
+        <img src="./img/item3.jpg" />
+        <div>
+          <span class="item_name">Only Check Trouser</span>
+          <i class="fa-regular fa-heart"></i>
+        </div>
+        <p class="price">$25.64</p>
+      </div>
+      <div class="item">
+        <img src="./img/item4.jpg" />
+        <div>
+          <span class="item_name">Classic Trench Coat</span>
+          <i class="fa-regular fa-heart"></i>
+        </div>
+        <p class="price">$75.64</p>
+      </div>
+      <div class="item">
+        <img src="./img/item1.jpg" />
+        <div>
+          <span class="item_name">Esprit Ruffle Shirt</span>
+          <i class="fa-regular fa-heart"></i>
+        </div>
+        <p class="price">$16.64</p>
+      </div>
+      <div class="item">
+        <img src="./img/item2.jpg" />
+        <div>
+          <span class="item_name">Herschel supply</span>
+          <i class="fa-regular fa-heart"></i>
+        </div>
+        <p class="price">$35.64</p>
+      </div>
+      <div class="item">
+        <img src="./img/item3.jpg" />
+        <div>
+          <span class="item_name">Only Check Trouser</span>
+          <i class="fa-regular fa-heart"></i>
+        </div>
+        <p class="price">$25.64</p>
+      </div>
+      <div class="item">
+        <img src="./img/item4.jpg" />
+        <div>
+          <span class="item_name">Classic Trench Coat</span>
+          <i class="fa-regular fa-heart"></i>
+        </div>
+        <p class="price">$75.64</p>
+      </div>
+      <button>LOAD MORE</button>
+    </div>
+  </body>
+  <footer>
+    <div class="footer_menus">
+      <div class="footer_menu">
+        <p>CATEGORIES</p>
+        <ul>
+          <li>Women</li>
+          <li>Men</li>
+          <li>Shoes</li>
+          <li>Watches</li>
+        </ul>
+      </div>
+      <div class="footer_menu">
+        <p>HELP</p>
+        <ul>
+          <li>Track Order</li>
+          <li>Returns</li>
+          <li>Shipping</li>
+          <li>FAQs</li>
+        </ul>
+      </div>
+      <div class="footer_menu">
+        <p>GET IN TOUCH</p>
+        <span
+          >Any questions? Let us know in store at 8th<br />
+          floor, 379 Hudson St, New York, NY 10018 or<br />
+          call us on (+1) 96 716 6879</span
+        >
+        <div class="touch_icons">
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-pinterest-p"></i>
+        </div>
+      </div>
+      <div class="footer_menu">
+        <p>NEWSLETTER</p>
+        <span>email@example.com</span>
+        <br />
+        <button>SUBSCRIBE</button>
+      </div>
+    </div>
+    <div class="footer_down">
+      <div class="down_imgs">
+        <img src="./img/down1.png" />
+        <img src="./img/down2.png" />
+        <img src="./img/down3.png" />
+        <img src="./img/down4.png" />
+        <img src="./img/down5.png" />
+      </div>
+      <span
+        >Copyright ©2025 All rights reserved | Made with by Colorlib &
+        distributed by ThemeWagon</span
+      >
+    </div>
+  </footer>
+</html>
